@@ -1,0 +1,29 @@
+# Project Information
+site_name: Project Euler Solutions
+site_author: Satyajit Ghana
+
+# Repository
+repo_name: satyajitghana/project-euler
+repo_url: https://github.com/satyajitghana/project-euler
+
+# Copyright
+copyright: Copyright &copy; 2020 Satyajit Ghana
+
+# Configuration
+theme:
+  name: null
+  custom_dir: "cinder"
+
+docs_dir: "solutions"
+
+# Extensions
+markdown_extensions:
+  - toc:
+      baselevel: 3
+      permalink: "#"
+
+# Page tree
+nav:
+  - "index.md"
+  - "solutions.md"
+  - "about.md"

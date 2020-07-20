@@ -33,7 +33,7 @@ def path_func(st, i, j, length):
     # left recurse
     if (i+1 < max_len):
         path_func(st, i+1, j, length + 1)
-    
+
     # right recurse
     if (i+1 < max_len and j < len(myarr[i+1])):
         path_func(st, i+1, j+1, length + 1)
