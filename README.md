@@ -4,7 +4,7 @@
 
 ## Status ⌚
 
-![gh-build](https://github.com/satyajitghana/project-euler/workflows/deploy/badge.svg?branch=master)
+![.github/workflows/deploy.yaml](https://github.com/satyajitghana/project-euler/workflows/.github/workflows/deploy.yaml/badge.svg?branch=master)
 
 ![repo-size](https://img.shields.io/github/repo-size/satyajitghana/project-euler)
 ![loc-count](https://sloc.xyz/github/satyajitghana/project-euler)
