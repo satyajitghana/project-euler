@@ -1,4 +1,4 @@
-# Project Euler Solutions
+<h1 align="center">Project Euler Solutions</h1>
 
 ## URL: https://satyajitghana.github.io/project-euler
 
