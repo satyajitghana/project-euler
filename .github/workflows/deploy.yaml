@@ -11,8 +11,8 @@ jobs:
 
       - name: Build
         run: |
-        pip install requirements.txt
-        mkdocs build
+          pip install requirements.txt
+          mkdocs build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
