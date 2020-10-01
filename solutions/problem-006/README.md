@@ -9,7 +9,7 @@ t2 is (1^2 + 2^2 + 3^2 + ... + n^2). Sum of n^2 is (n*(n+1)*(2*n+1))/6
 
 putting n = 100 gives the desired answer
 
-```
+```python
 n = 100
 t1 = 0.25*(n**4 + n**2 + 2*(n**3))
 t2 = (n*(n+1)*(2*n+1))/6
@@ -18,6 +18,7 @@ print(int(t1-t2))
 ```
 
 Output
+
 ```
 25164150
 ```
