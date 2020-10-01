@@ -112,8 +112,8 @@
 
 <h3 id="self-powers">Self Powers<a class="headerlink" href="#self-powers" title="Permanent link">#</a></h3>
 <p>We need to find the last 10 digits of a sum that i given by 1^1 + 2^2 + 3^3 + ...  uptp 1000^1000</p>
-<p>the num%10000000000 gives us remainder after dividing by 10000000000 which is the required answer </p>
-<pre><code>num = 0
+<p>the num%10000000000 gives us remainder after dividing by 10000000000 which is the required answer</p>
+<pre><code class="python">num = 0
 
 for i in range(1,1001):
     num = num + i**i
