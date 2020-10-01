@@ -1,4 +1,4 @@
-# Pandigital Multiples
+# Darts
 
 ```python
 limit = 100
