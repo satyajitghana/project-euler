@@ -2,14 +2,14 @@
 
 ```python
 def solution(k):
-	"""Sum all multiples of 3 or 5 below k."""
+	"""Sum all natural numbers that are multiples of 3 or 5, below k."""
 	sum = 0
-	for n in range(k):
+	for n in range(1, k):
 		if n % 3 == 0 or n % 5 == 0:
 			sum += n 
 	return sum 
 
-solution(1000) == 233168
+solution(1000)
 ```
 
 OUTPUT
