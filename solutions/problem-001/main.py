@@ -1,6 +1,3 @@
-# Multiples of 3 and 5
-
-```python
 def solution(k):
 	"""Sum all natural numbers that are multiples of 3 or 5, below k."""
 	sum = 0
@@ -9,11 +6,4 @@ def solution(k):
 			sum += n 
 	return sum 
 
-solution(1000)
-```
-
-OUTPUT
-
-```shell
-233168
-```
+print(solution(1000))
