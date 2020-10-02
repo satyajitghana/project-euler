@@ -38,3 +38,8 @@ fs.readFile('names.txt', {
 	console.log( calculateNameScores(names) );
 });
 ```
+
+OUTPUT
+```
+ 871198282
+```
