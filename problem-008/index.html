@@ -8,10 +8,10 @@
     
     <meta name="author" content="Satyajit Ghana">
     
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="../img/favicon.ico">
 
     
-    <title>Project Euler - Home - Project Euler Solutions</title>
+    <title>Largest Product In A Series - Project Euler Solutions</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
     <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="css/base.min.css" rel="stylesheet">
-    <link href="css/cinder.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
 
     
         
@@ -40,7 +40,7 @@
      
 </head>
 
-<body class="homepage" >
+<body>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -58,7 +58,7 @@
 
             <!-- Main title -->
 
-            <a class="navbar-brand" href=".">Project Euler Solutions</a>
+            <a class="navbar-brand" href="..">Project Euler Solutions</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -67,20 +67,20 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="active">
-                        <a href=".">Project Euler - Home</a>
+                    <li >
+                        <a href="..">Project Euler - Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="solutions/">Solutions</a>
+                        <a href="../solutions/">Solutions</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="about/">About</a>
+                        <a href="../about/">About</a>
                     </li>
                 
                 
@@ -92,18 +92,8 @@
                             <i class="fas fa-search"></i> Search
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
-                            <i class="fas fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="next" href="solutions/">
-                            Next <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </li>
                     <li>
-                        <a href="https://github.com/satyajitghana/project-euler/edit/master/docs/index.md">Edit on satyajitghana/project-euler</a>
+                        <a href="https://github.com/satyajitghana/project-euler/edit/master/docs/problem-008/README.md">Edit on satyajitghana/project-euler</a>
                     </li>
             </ul>
         </div>
@@ -115,23 +105,56 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#project-euler-home">Project Euler - Home</a></li>
-            <li class="second-level"><a href="#my-progress">My Progress</a></li>
-                
+        <li class="first-level active"><a href="#largest-product-in-a-series">Largest Product In A Series</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h3 id="project-euler-home">Project Euler - Home<a class="headerlink" href="#project-euler-home" title="Permanent link">#</a></h3>
-<p>Hey 👋 there,</p>
-<p>This is the documentation for my cute little project euler solutions repository, i'll try to update the repository with my solutions and maybe even try to explain my solutions.</p>
-<p>Please use the search bar to search your problem number or the title of the problem</p>
-<p>Head over to <a href="solutions/">Solutions</a> !</p>
-<blockquote>
-<p>Happy Coding 👩‍💻👨‍💻</p>
-</blockquote>
-<h4 id="my-progress">My Progress<a class="headerlink" href="#my-progress" title="Permanent link">#</a></h4>
-<p><img alt="satyajit-pe" src="https://projecteuler.net/profile/satyajitghana.png" /></p></div>
+<h3 id="largest-product-in-a-series">Largest Product In A Series<a class="headerlink" href="#largest-product-in-a-series" title="Permanent link">#</a></h3>
+<pre><code class="python">def calculate_product(part_of_num_string):
+    product = 1
+    for i in range(len(part_of_num_string) - 1):
+        product *= int(part_of_num_string[i])
+
+    return product
+
+
+def solution():
+    input_string = &quot;&quot;&quot;73167176531330624919225119674426574742355349194934
+96983520312774506326239578318016984801869478851843
+85861560789112949495459501737958331952853208805511
+12540698747158523863050715693290963295227443043557
+66896648950445244523161731856403098711121722383113
+62229893423380308135336276614282806444486645238749
+30358907296290491560440772390713810515859307960866
+70172427121883998797908792274921901699720888093776
+65727333001053367881220235421809751254540594752243
+52584907711670556013604839586446706324415722155397
+53697817977846174064955149290862569321978468622482
+83972241375657056057490261407972968652414535100474
+82166370484403199890008895243450658541227588666881
+16427171479924442928230863465674813919123162824586
+17866458359124566529476545682848912883142607690042
+24219022671055626321111109370544217506941658960408
+07198403850962455444362981230987879927244284909188
+84580156166097919133875499200524063689912560717606
+05886116467109405077541002256983155200055935729725
+71636269561882670428252483600823257530420752963450&quot;&quot;&quot;
+
+    products = []
+
+    num_string = input_string.replace(&quot;\n&quot;, &quot;&quot;)
+
+    for i in range(len(num_string) - 14):
+        product = calculate_product(num_string[i:i + 14])
+        products.append(product)
+
+    return max(products)
+</code></pre>
+
+<p>OUTPUT</p>
+<pre><code class="shell">23514624000
+</code></pre></div>
         
         
     </div>
@@ -149,7 +172,7 @@
         
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
 
     
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
@@ -157,10 +180,10 @@
     <script>hljs.initHighlightingOnLoad();</script>
     
 
-    <script>var base_url = "."</script>
+    <script>var base_url = ".."</script>
     
-    <script src="js/base.js"></script>
-    <script src="search/main.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -231,8 +254,3 @@
     </body>
 
 </html>
-
-<!--
-MkDocs version : 1.1.2
-Build Date UTC : 2020-10-02 10:28:16.185304+00:00
--->
