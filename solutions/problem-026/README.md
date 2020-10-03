@@ -1,6 +1,6 @@
 # Reciprocal cycles
 
-```pyth
+```python
 num = 1
 longest_cycle = 1
 
@@ -23,4 +23,3 @@ OUTPUT
 ```
 983
 ```
-
