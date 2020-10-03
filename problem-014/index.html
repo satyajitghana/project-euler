@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico">
 
     
-    <title>Largest Product In A Series - Project Euler Solutions</title>
+    <title>Longest Collatz sequence - Project Euler Solutions</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -93,7 +93,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/satyajitghana/project-euler/edit/master/docs/problem-008/README.md">Edit on satyajitghana/project-euler</a>
+                        <a href="https://github.com/satyajitghana/project-euler/edit/master/docs/problem-014/README.md">Edit on satyajitghana/project-euler</a>
                     </li>
             </ul>
         </div>
@@ -105,75 +105,68 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#largest-product-in-a-series">Largest Product In A Series</a></li>
-            <li class="second-level"><a href="#python-solution">Python Solution</a></li>
-                
-            <li class="second-level"><a href="#haskell-solution">Haskell Solution</a></li>
+        <li class="first-level active"><a href="#longest-collatz-sequence">Longest Collatz sequence</a></li>
+            <li class="second-level"><a href="#go-solution">Go Solution</a></li>
                 
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h3 id="largest-product-in-a-series">Largest Product In A Series<a class="headerlink" href="#largest-product-in-a-series" title="Permanent link">#</a></h3>
-<h4 id="python-solution">Python Solution<a class="headerlink" href="#python-solution" title="Permanent link">#</a></h4>
-<pre><code class="python">def calculate_product(part_of_num_string):
-    product = 1
-    for i in range(len(part_of_num_string) - 1):
-        product *= int(part_of_num_string[i])
+<h3 id="longest-collatz-sequence">Longest Collatz sequence<a class="headerlink" href="#longest-collatz-sequence" title="Permanent link">#</a></h3>
+<h4 id="go-solution">Go Solution<a class="headerlink" href="#go-solution" title="Permanent link">#</a></h4>
+<pre><code class="Go">package main
 
-    return product
+import &quot;fmt&quot;
 
+type longestCollatzSequenceStruct struct {
+    start int
+    total int
+}
 
-def solution():
-    input_string = &quot;&quot;&quot;73167176531330624919225119674426574742355349194934
-96983520312774506326239578318016984801869478851843
-85861560789112949495459501737958331952853208805511
-12540698747158523863050715693290963295227443043557
-66896648950445244523161731856403098711121722383113
-62229893423380308135336276614282806444486645238749
-30358907296290491560440772390713810515859307960866
-70172427121883998797908792274921901699720888093776
-65727333001053367881220235421809751254540594752243
-52584907711670556013604839586446706324415722155397
-53697817977846174064955149290862569321978468622482
-83972241375657056057490261407972968652414535100474
-82166370484403199890008895243450658541227588666881
-16427171479924442928230863465674813919123162824586
-17866458359124566529476545682848912883142607690042
-24219022671055626321111109370544217506941658960408
-07198403850962455444362981230987879927244284909188
-84580156166097919133875499200524063689912560717606
-05886116467109405077541002256983155200055935729725
-71636269561882670428252483600823257530420752963450&quot;&quot;&quot;
+func collatz(number int) int {
+    if number%2 == 0 {
+        return number / 2
+    }
 
-    products = []
+    return number*3 + 1
+}
 
-    num_string = input_string.replace(&quot;\n&quot;, &quot;&quot;)
+func collatzSequence(start int) []int {
+    var sequence []int
 
-    for i in range(len(num_string) - 14):
-        product = calculate_product(num_string[i:i + 14])
-        products.append(product)
+    sequence = append(sequence, start)
 
-    return max(products)
-</code></pre>
+    for start != 1 {
+        start = collatz(start)
+        sequence = append(sequence, start)
+    }
 
-<h4 id="haskell-solution">Haskell Solution<a class="headerlink" href="#haskell-solution" title="Permanent link">#</a></h4>
-<pre><code class="haskell">calc :: String -&gt; Int
-calc x = foldl (*) 1 $ map (\x -&gt; read [x] :: Int) x
+    return sequence
+}
 
-slice :: [a] -&gt; Int -&gt; Int -&gt; [a]
-slice x l t = take t $ drop l x
+func longestCollatzSequence(limit int) {
+    var longest longestCollatzSequenceStruct
 
-main = do
-  let x = &quot;7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450&quot;
-      n = length x
-      t = 5
-  print $ maximum [calc $ slice x i t | i &lt;- [0 .. n - t - 1]]
-  print $ calc &quot;1335&quot;
+    for i := 1; i &lt;= limit; i++ {
+        sequenceTemp := collatzSequence(i)
+        sequenceLengthTemp := len(sequenceTemp)
+
+        if longest.total &lt; sequenceLengthTemp {
+            longest.start = i
+            longest.total = sequenceLengthTemp
+        }
+    }
+
+    fmt.Println(longest.start)
+}
+
+func main() {
+    longestCollatzSequence(1000000)
+}
 </code></pre>
 
 <p>OUTPUT</p>
-<pre><code class="shell">23514624000
+<pre><code class="txt">837799
 </code></pre></div>
         
         
