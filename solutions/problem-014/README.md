@@ -1,5 +1,7 @@
 # Longest Collatz sequence
 
+## Go Solution
+
 ```Go
 package main
 
