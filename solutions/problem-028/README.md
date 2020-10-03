@@ -1,11 +1,5 @@
 # Number spiral diagonals
 
-_21_ 22 23 24 _25_
-20 _7_ 8 _9_ 10
-19 6 _1_ 2 11
-18 _5_ 4 _3_ 12
-_17_ 16 15 14 _13_
-
 ```
 diagonal 1 : 1,3,7,13,21,31,43...
 has a common difference of - 2,4,6,8,10,...
@@ -34,3 +28,12 @@ for i in range(1000):
 
 print(total_sum)
 ```
+
+
+
+OUTPUT
+
+```
+669171001
+```
+
