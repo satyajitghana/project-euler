@@ -12,6 +12,8 @@
 
 - ## [Problem 006](problem-006/README.md)
 
+- ## [Problem 007](problem-007/README.md)
+
 - ## [Problem 013](problem-013/README.md)
 
 - ## [Problem 018](problem-018/README.md)
@@ -29,5 +31,7 @@
 - ## [Problem 038](problem-038/README.md)
 
 - ## [Problem 048](problem-048/README.md)
+
+- ## [Problem 081](problem-081/README.md)
 
 - ## [Problem 109](problem-109/README.md)
