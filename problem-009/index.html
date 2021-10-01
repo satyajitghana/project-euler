@@ -111,7 +111,7 @@
         <div class="col-md-9" role="main">
 
 <h3 id="special-pythagorean-triplet">Special Pythagorean triplet<a class="headerlink" href="#special-pythagorean-triplet" title="Permanent link">#</a></h3>
-<pre><code class="haskell">triplets l = [[a,b,c] | m &lt;- [2..limit],
+<pre><code class="language-haskell">triplets l = [[a,b,c] | m &lt;- [2..limit],
                         n &lt;- [1..(m-1)], 
                         let a = m^2 - n^2, 
                         let b = 2*m*n, 
@@ -120,9 +120,8 @@
     where limit = floor . sqrt . fromIntegral $ l
 problem_9 = product . head . triplets $ 1000
 </code></pre>
-
 <p>OUTPUT</p>
-<pre><code class="shell">31875000
+<pre><code class="language-shell">31875000
 </code></pre></div>
         
         

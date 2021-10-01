@@ -114,7 +114,7 @@
 
 <h3 id="square-root-convergents">Square Root Convergents<a class="headerlink" href="#square-root-convergents" title="Permanent link">#</a></h3>
 <h4 id="haskell-solution">Haskell Solution<a class="headerlink" href="#haskell-solution" title="Permanent link">#</a></h4>
-<pre><code class="haskell">import Data.Ratio
+<pre><code class="language-haskell">import Data.Ratio
 
 main = do
   let f x = 
@@ -124,7 +124,6 @@ main = do
 
   print $ length $ filter (\x -&gt; (length $ show $ numerator x) - (length $ show $ denominator x) == 1) $ take 1000 $ iterate f (3 % 2)
 </code></pre>
-
 <p>OUTPUT</p>
 <pre><code>153
 </code></pre></div>

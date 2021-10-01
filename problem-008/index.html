@@ -116,7 +116,7 @@
 
 <h3 id="largest-product-in-a-series">Largest Product In A Series<a class="headerlink" href="#largest-product-in-a-series" title="Permanent link">#</a></h3>
 <h4 id="python-solution">Python Solution<a class="headerlink" href="#python-solution" title="Permanent link">#</a></h4>
-<pre><code class="python">def calculate_product(part_of_num_string):
+<pre><code class="language-python">def calculate_product(part_of_num_string):
     product = 1
     for i in range(len(part_of_num_string) - 1):
         product *= int(part_of_num_string[i])
@@ -156,9 +156,8 @@ def solution():
 
     return max(products)
 </code></pre>
-
 <h4 id="haskell-solution">Haskell Solution<a class="headerlink" href="#haskell-solution" title="Permanent link">#</a></h4>
-<pre><code class="haskell">calc :: String -&gt; Int
+<pre><code class="language-haskell">calc :: String -&gt; Int
 calc x = foldl (*) 1 $ map (\x -&gt; read [x] :: Int) x
 
 slice :: [a] -&gt; Int -&gt; Int -&gt; [a]
@@ -171,9 +170,8 @@ main = do
   print $ maximum [calc $ slice x i t | i &lt;- [0 .. n - t - 1]]
   print $ calc &quot;1335&quot;
 </code></pre>
-
 <p>OUTPUT</p>
-<pre><code class="shell">23514624000
+<pre><code class="language-shell">23514624000
 </code></pre></div>
         
         

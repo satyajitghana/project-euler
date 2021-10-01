@@ -111,7 +111,7 @@
         <div class="col-md-9" role="main">
 
 <h3 id="largest-product-in-a-series">Largest Product In A Series<a class="headerlink" href="#largest-product-in-a-series" title="Permanent link">#</a></h3>
-<pre><code class="haskell">import Data.List
+<pre><code class="language-haskell">import Data.List
 
 triangleNumber = scanl1 (+) [1..]
 
@@ -121,9 +121,8 @@ numDivs = length . divisors
 
 problem-012 = fund ((&gt;500) . numDivs) triangleNumber
 </code></pre>
-
 <p>OUTPUT</p>
-<pre><code class="shell">76576500
+<pre><code class="language-shell">76576500
 </code></pre></div>
         
         

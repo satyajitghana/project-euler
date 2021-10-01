@@ -111,7 +111,7 @@
         <div class="col-md-9" role="main">
 
 <h3 id="largest-product-in-a-series">Largest Product In A Series<a class="headerlink" href="#largest-product-in-a-series" title="Permanent link">#</a></h3>
-<pre><code class="haskell">primes = 2 : filter (null . tail . primeFactors) [3,5..]
+<pre><code class="language-haskell">primes = 2 : filter (null . tail . primeFactors) [3,5..]
 
 primeFactors n = factor n primes
   where
@@ -122,9 +122,8 @@ primeFactors n = factor n primes
 
 problem_10 = sum $ takeWhile (&lt;2000000) primes
 </code></pre>
-
 <p>OUTPUT</p>
-<pre><code class="shell">142913828922
+<pre><code class="language-shell">142913828922
 </code></pre></div>
         
         

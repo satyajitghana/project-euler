@@ -111,12 +111,11 @@
         <div class="col-md-9" role="main">
 
 <h3 id="counting-rectangles">Counting Rectangles<a class="headerlink" href="#counting-rectangles" title="Permanent link">#</a></h3>
-<pre><code class="haskell">main = do
+<pre><code class="language-haskell">main = do
   let f x = x * (x + 1) `div` 2
       lmt = 2 * 10^6
   print $ minimum [(abs (f x * f y - lmt), x * y) | x &lt;- [1 .. 1000], y &lt;- [1 .. 1000]]
 </code></pre>
-
 <p>OUTPUT</p>
 <pre><code>2772
 </code></pre></div>

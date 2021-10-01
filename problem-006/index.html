@@ -116,13 +116,12 @@
 1 + 2 + ... + n is n(n+1)/2. Squaring it will give (n<strong>4 + n</strong>2 + 2<em>(n</em>*3))/4</p>
 <p>t2 is (1^2 + 2^2 + 3^2 + ... + n^2). Sum of n^2 is (n<em>(n+1)</em>(2*n+1))/6</p>
 <p>putting n = 100 gives the desired answer</p>
-<pre><code class="python">n = 100
+<pre><code class="language-python">n = 100
 t1 = 0.25*(n**4 + n**2 + 2*(n**3))
 t2 = (n*(n+1)*(2*n+1))/6
 
 print(int(t1-t2))
 </code></pre>
-
 <p>Output</p>
 <pre><code>25164150
 </code></pre></div>

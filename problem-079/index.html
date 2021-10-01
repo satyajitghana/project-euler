@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico">
 
     
-    <title>Self Powers - Project Euler Solutions</title>
+    <title>Passcode derivation - Project Euler Solutions</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -93,7 +93,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/satyajitghana/project-euler/edit/master/docs/problem-048/README.md">Edit on satyajitghana/project-euler</a>
+                        <a href="https://github.com/satyajitghana/project-euler/edit/master/docs/problem-079/README.md">Edit on satyajitghana/project-euler</a>
                     </li>
             </ul>
         </div>
@@ -105,23 +105,39 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#self-powers">Self Powers</a></li>
+        <li class="first-level active"><a href="#passcode-derivation">Passcode derivation</a></li>
+            <li class="second-level"><a href="#python-solution">Python Solution</a></li>
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h3 id="self-powers">Self Powers<a class="headerlink" href="#self-powers" title="Permanent link">#</a></h3>
-<p>We need to find the last 10 digits of a sum that i given by 1^1 + 2^2 + 3^3 + ...  uptp 1000^1000</p>
-<p>the num%10000000000 gives us remainder after dividing by 10000000000 which is the required answer</p>
-<pre><code class="language-python">num = 0
+<h3 id="passcode-derivation">Passcode derivation<a class="headerlink" href="#passcode-derivation" title="Permanent link">#</a></h3>
+<h4 id="python-solution">Python Solution<a class="headerlink" href="#python-solution" title="Permanent link">#</a></h4>
+<pre><code class="language-python">import os
+from itertools import *
+from collections import defaultdict
 
-for i in range(1,1001):
-    num = num + i**i
+def main():
+    attempts = [line.strip() for line in open(os.path.join(os.path.dirname(__file__), 'p079_keylog.txt')).readlines()]
+    appearances = defaultdict(list)
+    for attempt in attempts:
+        for i, n in enumerate(attempt):
+            appearances[n].append(i)
 
-print(num%10000000000)
+    average_positions = {}
+    for k,v in list(appearances.items()):
+        average_positions[k] = float(sum(v))/float(len(v))
+
+    a = [k for k,v in sorted(list(average_positions.items()), key=lambda a: a[1])]
+    print(''.join(str(x) for x in a))
+
+if __name__ == '__main__':
+    main()
+
 </code></pre>
-<p>Output</p>
-<pre><code>9110846700
+<p>OUTPUT</p>
+<pre><code class="language-text">73162890
 </code></pre></div>
         
         

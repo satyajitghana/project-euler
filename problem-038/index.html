@@ -111,7 +111,7 @@
         <div class="col-md-9" role="main">
 
 <h3 id="pandigital-multiples">Pandigital Multiples<a class="headerlink" href="#pandigital-multiples" title="Permanent link">#</a></h3>
-<pre><code class="python">from functools import reduce
+<pre><code class="language-python">from functools import reduce
 
 def concat_prod(x, l):
     return reduce(lambda x, y: x + y, [str(num * x) for num in l])
@@ -121,9 +121,8 @@ pandigitalnums = [(int(concat_prod(x, l)), x) for x in range(9000, 9999) if set(
 
 pandigitalnums
 </code></pre>
-
 <p>OUTPUT</p>
-<pre><code class="txt">[(926718534, 9267), (927318546, 9273), (932718654, 9327)]
+<pre><code class="language-txt">[(926718534, 9267), (927318546, 9273), (932718654, 9327)]
 932718654
 </code></pre></div>
         

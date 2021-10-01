@@ -111,7 +111,7 @@
         <div class="col-md-9" role="main">
 
 <h3 id="coins-sum">Coins Sum<a class="headerlink" href="#coins-sum" title="Permanent link">#</a></h3>
-<pre><code class="python">coins = [1, 2, 5, 10, 20, 50, 100, 200]
+<pre><code class="language-python">coins = [1, 2, 5, 10, 20, 50, 100, 200]
 target = 200
 dp = [[1] + [0]*target for i in range(len(coins)+1)]
 
@@ -123,13 +123,11 @@ for i in range(1, len(dp)):
 
 dp[len(coins)][target]
 </code></pre>
-
 <p>OUTPUT</p>
-<pre><code class="txt">73682
+<pre><code class="language-txt">73682
 </code></pre>
-
 <p>Recursive solution</p>
-<pre><code class="python">coins = [1, 2, 5, 10, 20, 50, 100, 200]
+<pre><code class="language-python">coins = [1, 2, 5, 10, 20, 50, 100, 200]
 
 def count_ways(coins, coins_available, target_amt):
     if target_amt == 0:

@@ -111,16 +111,15 @@
         <div class="col-md-9" role="main">
 
 <h3 id="digit-factorials">Digit Factorials<a class="headerlink" href="#digit-factorials" title="Permanent link">#</a></h3>
-<pre><code class="python">from functools import reduce
+<pre><code class="language-python">from functools import reduce
 
 facts = [1] + [reduce(lambda x, y: x * y, range(1, i+1)) for i in range(1, 10)]
 curi_num = lambda num: sum(map(lambda x: facts[int(x)], list(str(num)))) == num
 curi_nums = [i for i in range(1000000) if curi_num(i)]
 sum(set(curi_nums) - {1, 2})
 </code></pre>
-
 <p>OUTPUT</p>
-<pre><code class="txt">40730
+<pre><code class="language-txt">40730
 </code></pre></div>
         
         
