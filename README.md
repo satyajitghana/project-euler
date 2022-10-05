@@ -11,6 +11,15 @@
 ![license](https://img.shields.io/github/license/satyajitghana/project-euler)
 ![maintainer](https://img.shields.io/badge/maintainer-shadowleaf-blue)
 
+## Testing Actions Locally
+
+This needs docker
+
+```bash
+curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+./bin/act
+```
+
 ---
 
 <h3 align="center">Made with 💘 by shadowleaf</h3>
