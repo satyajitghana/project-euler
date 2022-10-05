@@ -108,6 +108,8 @@
         <li class="first-level active"><a href="#longest-collatz-sequence">Longest Collatz sequence</a></li>
             <li class="second-level"><a href="#go-solution">Go Solution</a></li>
                 
+            <li class="second-level"><a href="#c-solution">C++ Solution</a></li>
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -166,6 +168,71 @@ func main() {
 </code></pre>
 <p>OUTPUT</p>
 <pre><code class="language-txt">837799
+</code></pre>
+<h4 id="c-solution">C++ Solution<a class="headerlink" href="#c-solution" title="Permanent link">#</a></h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;numeric&gt;
+#include &lt;unordered_map&gt;
+
+int main(int argc, char* argv[]) {
+    u_int64_t limit = 1'000'000;  // 1 million
+    // u_int64_t limit = 1'000;
+
+    std::unordered_map&lt;u_int64_t, u_int64_t&gt; collatz_lengths;
+    collatz_lengths[1] = 1;
+
+    for (u_int64_t i = 1; i &lt;= limit; i++) {
+        if (collatz_lengths.find(i) != collatz_lengths.end()) {
+            // found in collatz lengths
+            // nothing to do
+            continue;
+        } else {
+            u_int64_t collatz_num = i;
+            u_int64_t collatz_length = 0;
+
+            while (collatz_num != 1) {
+                // std::cout &lt;&lt; &quot;collatz_num: &quot; &lt;&lt; collatz_num &lt;&lt; &quot;, collatz_length: &quot; &lt;&lt; collatz_length &lt;&lt; std::endl;
+
+                if (collatz_num % 2 == 0) {
+                    collatz_num /= 2;
+                } else {
+                    collatz_num = 3 * collatz_num + 1;
+                }
+
+                collatz_length += 1;
+
+                // check again if its in map
+                if (collatz_lengths.find(collatz_num) != collatz_lengths.end()) {
+                    // found it, just add the length from the map
+                    collatz_length += collatz_lengths[collatz_num];
+                    break;
+                }
+            }
+
+            collatz_lengths[i] = collatz_length;
+        }
+    }
+
+    // for (auto i : collatz_lengths) {
+    //     std::cout &lt;&lt; &quot;num: &quot; &lt;&lt; i.first &lt;&lt; &quot;, length: &quot; &lt;&lt; i.second &lt;&lt; std::endl;
+    // }
+
+    std::pair&lt;uint64_t, u_int64_t&gt; longest_collatz(1, 1);
+
+    for (auto i : collatz_lengths) {
+        if (i.second &gt; longest_collatz.second) {
+            longest_collatz.second = i.second;
+            longest_collatz.first = i.first;
+        }
+    }
+
+    std::cout &lt;&lt; &quot;longest length: &quot; &lt;&lt; longest_collatz.second &lt;&lt; &quot;, num: &quot; &lt;&lt; longest_collatz.first &lt;&lt; std::endl;
+
+    return EXIT_SUCCESS;
+}
+</code></pre>
+<p>OUTPUT</p>
+<pre><code class="language-text">longest length: 525, num: 837799
 </code></pre></div>
         
         
