@@ -8,7 +8,7 @@
 
 * ## [Problem 004](problem-004/README.md)
 
-* ## [Problem 005](problem-005/README.md
+* ## [Problem 005](problem-005/README.md)
 
 * ## [Problem 006](problem-006/README.md)
 
