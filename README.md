@@ -11,6 +11,12 @@
 ![license](https://img.shields.io/github/license/satyajitghana/project-euler)
 ![maintainer](https://img.shields.io/badge/maintainer-shadowleaf-blue)
 
+## Contributors
+
+<a href="https://github.com/satyajitghana/project-euler/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=satyajitghana/project-euler" />
+</a>
+
 ## Testing Actions Locally
 
 This needs docker
