@@ -60,6 +60,8 @@
 
 * ## [Problem 038](problem-038/README.md)
 
+* ## [Problem 043](problem-043/README.md)
+
 * ## [Problem 048](problem-048/README.md)
 
 * ## [Problem 057](problem-057/README.md)
