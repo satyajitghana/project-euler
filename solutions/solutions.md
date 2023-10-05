@@ -50,6 +50,8 @@
 
 * ## [Problem 029](problem-029/README.md)
 
+* ## [Problem 030](problem-030/README.md)
+
 * ## [Problem 031](problem-031/README.md)
 
 * ## [Problem 034](problem-034/README.md)
