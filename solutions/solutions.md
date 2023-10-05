@@ -46,6 +46,8 @@
 
 * ## [Problem 026](problem-026/README.md)
 
+* ## [Problem 027](problem-027/README.md)
+
 * ## [Problem 028](problem-028/README.md)
 
 * ## [Problem 029](problem-029/README.md)
